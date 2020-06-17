@@ -1,0 +1,336 @@
+\documentclass[a4paper,11pt]{article}
+\pdfoutput=1
+\usepackage{jinstpub}
+\usepackage{graphicx} 
+\usepackage{url}
+
+\newcommand{\Itot}{$I_{\mathrm{tot}}$}
+\newcommand{\Ig}  {$I_{\mathrm{G3D}}$}
+\newcommand{\Ime}  {$I_{\mathrm{mesh}}$}
+\newcommand{\Ea}  {$E_{\mathrm{A}}$}
+\newcommand{\La}  {$L$(\Ea)}
+\newcommand{\nel}  {$n_{\mathrm{el}}$}
+\newcommand{\ngem}  {$n_{\mathrm{GEM}}$}
+\newcommand{\Vg}  {V$_{\mathrm{GEM}}$}
+\newcommand{\agem}  {$\alpha_{\mathrm{GEM}}$}
+\newcommand{\Tm}  {$T_{\mathrm{mesh}}$}
+\newcommand{\nm}  {$n_{\mathrm{exc}}$}
+\newcommand{\aex}  {$\alpha_{\mathrm{exc}}$}
+
+\title{\boldmath First evidence of luminescence in a He/CF$_4$ gas mixture induced by non-ionizing electrons}
+
+\author[1,2]{E. Baracchini,} 
+%\author[3]{R Bedogni,} 
+%\author[4,5]{F Bellini,} 
+\author[3]{L. Benussi,}
+\author[3]{S. Bianco,}
+\author[3]{C. Capoccia,} 
+\author[3,4]{M. Caponero,}
+\author[5,6]{G. Cavoto,}
+\author[1,2]{A. Cortez,}
+\author[5]{I. A. Costa,}
+\author[5]{E. Di Marco,}
+\author[5]{G. D'Imperio,}
+\author[1,2]{G. Dho,}
+\author[5]{F. Iacoangeli,}
+\author[3]{G. Maccarrone,}
+\author[5,7]{M. Marafini,}
+\author[3]{G. Mazzitelli,}
+\author[5,6]{A. Messina,}
+\author[3]{A. Orlandi,}
+\author[3]{E. Paoletti,}
+\author[3]{L. Passamonti,}
+\author[8,9]{F. Petrucci,}
+\author[3]{D. Piccolo,}
+\author[3]{D. Pierluigi,}
+\author[5]{D. Pinci,\note{Corresponding author.}}
+\author[5]{F. Renga,}
+\author[3]{F. Rosatelli,}
+\author[3]{A. Russo,}
+\author[3,10]{G. Saviano,}
+\author[3]{and S. Tomassini}
+
+\affiliation[1]{Gran~Sasso~Science~Institute,\\ L'Aquila, I-67100, Italy}
+\affiliation[2]{Istituto Nazionale di Fisica Nucleare,\\ Laboratori Nazionali del Gran Sasso, Assergi, Italy}
+\affiliation[3]{Istituto Nazionale di Fisica Nucleare ,\\  Laboratori Nazionali di Frascati, I-00044, Italy}
+\affiliation[4]{ENEA Centro Ricerche Frascati, Frascati, Italy}
+\affiliation[5]{Istituto~Nazionale~di~Fisica~Nucleare,\\ Sezione di Roma, I-00185, Italy}
+\affiliation[6]{Dipartimento di Fisica Sapienza Universit\`a di Roma, I-00185, Italy} 
+\affiliation[7]{Museo Storico della Fisica e Centro Studi e Ricerche "Enrico Fermi",\\ Piazza del Viminale 1, Roma, I-00184, Italy}
+\affiliation[8]{Dipartimento di Matematica e Fisica, Universit\`a Roma TRE, Roma, Italy}
+\affiliation[9]{Istituto Nazionale di Fisica Nucleare, Sezione di Roma TRE, Roma, Italy}
+\affiliation[10]{Dipartimento di Ingegneria Chimica, Materiali e Ambiente, Sapienza Universit\`a di Roma, Roma, Italy}
+
+\emailAdd{davide.pinci@roma1.infn.it}
+
+
+\abstract{
+
+Optical readout of Gas Electron Multipliers (GEM) provides very interesting performances and has been proposed for different applications in particle physics. In particular, thanks to its good efficiency in the keV energy range, it is being developed for low-energy and rare event studies, such as Dark Matter search.
+So far, the optical approach exploits the light produced during the avalanche processes in GEM channels.
+
+Further luminescence in the gas can be induced by electrons accelerated by a suitable electric field.
+%
+The CYGNO collaboration studied this process with a combined use of a triple-GEM structure and a grid in an He/CF$_4$ (60/40) gas mixture at atmospheric pressure. 
+Results reported in this paper allow to conclude that with an electric field of about 11~kV/cm a photon production mean free path of about 1.0~cm was found.}
+
+\begin{document}
+\maketitle
+\flushbottom
+
+\section*{Introduction}
+
+The reading-out of the light produced by the de-excitation of gas molecules during the processes of electron multiplication in Micro Pattern Gas Detectors (MPGD) has shown a very fast development in recent years~\cite{bib:ref1,bib:ref2,bib:ref3,bib:nim_orange1,bib:jinst_orange1}.
+
+This approach has become possible thanks to the significant progresses achieved both in the performance of MPGD as well as in the evolution of the light sensor production technology. Complementary Metal Oxide Semiconductor (CMOS) based devices combine high sensitivity with a low noise level and provide very good performance for detecting and tracking particles in the gas~\cite{bib:nim_orange2,bib:eps, bib:jinst_orange2}. 
+
+The granularity of such devices requires a good production of photons to properly illuminate its large number of pixels. Therefore, the total amount of light provided is still a dominant limiting factor.
+
+A possibility of amplifying the light signal is given by the exploitation of the electron-induced luminescence in the gas outside the multiplication regions.
+%to add to the photons produced in the multiplication processes .
+
+In this paper the results of measurements of electo-luminescence in He/CF$_4$ (60/40) gas mixture are reported.
+
+The R\&D presented is part of the CYGNO work to develop an Optical Readout based TPC for Dark Matter search and rare processes study.
+
+
+\section{Electro-luminescence in He/CF$_4$ based mixtures}
+\label{sec:he-cf4}
+Light produced in He/CF$_4$ gas mixture by primary and secondary ionization processes was widely studied in the past \cite{bib:Fraga,bib:Margato2}.
+The conclusions of these studies that have important impacts on this paper, can be summarised here:
+
+\begin{enumerate}
+    \item The emission spectrum of He/CF$_4$ (60/40) exhibits two broad molecular continua: one centred at 290~nm with a shoulder at 240~nm and another centred at 620~nm which extends from 500~nm to 750~nm;
+    \item The broad band in the visible region results from the excitation of a Rydberg state of the CF$_4$ molecule that dissociates into an emitting CF$^*_3$ fragment. The energy threshold for this emission is found to be 12.5~eV;
+    \item This threshold is not far from the value of 15.9~eV of the dissociative ionisation threshold;
+    \item A number of about 3 collisions per centimetre (i.e. a mean free path of 3.3~mm) leading to dissociation of CF$_4$ into neutral fragments, was evaluated for an electric field of 12.5~kV/cm~\cite{bib:Fraga}. This value rapidly decreases for lower electric field values and is expected to be around 1 collision per centimetre at 11.0~kV/cm.
+\end{enumerate}
+
+
+
+\section{Experimental setup}
+
+\subsection{The detector}
+
+\label{sec:setup}
+Figure~\ref{fig:setup} shows a sketch of CYGNO prototype used in these measurements.
+Three $10\times10$~cm$^2$ standard GEMs (50~$\mu$m thickness, 70~$\mu$m diameter holes with 140~$\mu$m pitch)
+are mounted with two 2~mm wide transfer gaps between them.
+A planar cathode is placed in front of GEM~\#1 to create a 1~cm wide drift gap that represents the sensitive volume of the device and that results therefore to be 100~cm$^3$.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\textwidth]{Mango_layout_cathodo.jpg}
+\caption{Schematic of the experimental setup. The position of sensitive volume is indicated (A) and the lens (B) and the CMOS camera (C) are visible.
+In the inset, the triple-GEM structure with the mesh and cathode is visible.} 
+\label{fig:setup}
+\end{figure}
+
+Beyond the third GEM (GEM~\#3), at a distance $\Delta z$ of 3 mm, a metal mesh is placed to provide an electric field to accelerate electrons exiting from the GEM channels.
+
+In this configuration, the currents drawn by the bottom electrode of GEM~\#3 and by the mesh were both measured by a current-meter with a sensitivity of 2~nA.
+
+A transparent plastic foil
+is used to seal the gas volume beyond the third GEM.
+With a transmission larger than 90\% for visible light, 
+it allows the detector to be optically coupled to the readout system, 
+placed outside the detector gas volume.
+An Hamamatsu Orca Flash 4.0 camera, based on a CMOS sensor, 
+is used\footnote{For more details visit http://camera.hamamatsu.com/eu/en/product/search/C11440-42U/index.html}
+to acquire images produced by the photons created in the gas ((C) in Fig.\ref{fig:setup})
+through an 8~cm side squared window. 
+
+As described in \cite{bib:jinst_orange1},
+the sensor ($2048 \times 2048$ pixels) 
+has a noise level of less than 2 electrons per pixel,
+a quantum efficiency of about 70\% at 600 nm
+and provides 0.9 counts per photon.
+The camera is equipped with a Schneider 
+lens\footnote{For more details visit https://www.edmundoptics.com/imaging-lenses/fixed-focal-length-lenses/Schneider-Fast-C-Mount-Lenses/} 
+providing an aperture $a = 0.95$ with a focal length of 25 mm ((B) in Fig.\ref{fig:setup}).
+The lens is placed at a distance $d$ of 27.5 cm from the last GEM
+in order to obtain a de-magnification 
+$\delta = (d/f) - 1 = 10$ to 
+image a surface $13.3 \times 13.3$~cm$^2$ onto the 
+$1.33 \times 1.33$~cm$^2$ sensor. 
+In this configuration, each pixel
+looks at an effective area of 
+$65 \times 65$~$\mu$m$^2$.
+The fraction of the light collected by the lens can be evaluated to be $5.7 \times 10^{-3}$~\cite{bib:jinst_orange1}.
+
+
+\subsection{Data acquisition and analysis}
+
+All data described in this paper refers to runs where gas in the drift gap was exposed to the 5.9~keV photons provided by a $^{55}$Fe source placed just outside the sensitive volume in correspondence of the space between the cathode and GEM~\#1.
+The nominal source activity was 740~MBq.
+
+Given the very high activity of the source and the small size of the sensitive volume, the background due to natural radioactivity is supposed to be negligible. For this reason it was possible to operate the camera acquisition in auto-trigger mode.
+
+As described in \cite{bib:fe55}, the interaction of low energy photons in the gas mixture in use create photo-electrons that release their whole energy in few hundreds of micrometers. Because of subsequent diffusion of electrons during the drift toward the GEM, these events produce round spot-like signals on the CMOS sensor with diameters of 2-3~mm.
+
+The detector was operated in constant configuration: 
+\begin{itemize}
+    \item the electric field in the drift gap was kept to 0.9~kV/cm;
+    \item the electric field in the gaps between the GEM equal to 2.5~kV/cm;
+    \item voltage difference across the GEM (\Vg) electrodes was set to 400~V;
+    \item flushed with an He/CF$_4$ (60/40) mixture at a total rate of 100~cc/min at atmospheric pressure.
+\end{itemize}
+
+In this configuration, according to previous measurements \cite{bib:ieee_orange}, the triple-GEM structure is expected to provide a total charge gain of the order of 10$^5$.
+While keeping the stack electric configuration stable, the voltage difference between the bottom electrode of GEM~\#3 and the mesh ($\Delta$V) was scanned from 0~kV to 3.4~kV. This upper value was chosen because of some electrical instabilities arising for a $\Delta$V of 3.5~kV.
+Therefore, the electric field in the acceleration gap (\Ea) was scanned in the range [0~$\div$11.3]~kV/cm. 
+
+For each value of $\Delta$V two sets of data were taken:
+
+\begin{itemize}
+    \item {\it Long}: 30 images with a sensor exposure of 10 seconds. 
+    \item {\it Short}: 200 images with a sensor exposure of 500 ms. 
+\end{itemize}
+
+The difference in the amount of collected light and spot occupancy in the images in the two run types allow to extract similar information with different analysis methods in order to cross-check the results.
+
+For the {\it Long} runs a very simple algorithm was developed with no spot identification or reconstruction: the total amount of light reaching the sensor \La\ is simply evaluated by summing the number of photons detected by each pixel over all images in the run.
+
+On the other hand, the images in the {\it Short} runs, were analysed in detail to reconstruct the number of photons collected in each single spot. The obtained distributions were fitted with a Gaussian plus a Polya function as described in \cite{bib:fe55}. This analysis allows to study the behavior of the signal and separate it from possible variation of light background.
+
+\section{Experimental results and discussion}
+
+\subsection{Light yield behaviour}
+\label{sec:ly}
+Figure \ref{fig:beam} shows the spatial distribution of the recorded events for \Ea~=~0~kV/cm (top) and for \Ea~=~11.3~kV/cm (bottom) in the central part of active area (the borders of the
+8~cm wide transparent windows are visible for $x$ around 430~pixels and 1650~pixels).
+These two plots show data from two {\it Long} runs.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{hImage_3590.png}\\
+\includegraphics[width=0.8\textwidth]{hImage_3583.png}
+\caption{Map of the light detected in the detector for \Ea~=~0~kV/cm (top) and for \Ea~=~11.3~kV/cm (bottom).} 
+\label{fig:beam}
+\end{figure}
+
+The acceleration gap is clearly effective in increasing the light detected.
+For each value of \Ea, \La\ is evaluated. 
+The behavior of $L$(\Ea)/$L$(0) is shown in Fig.\ref{fig:light} as a function of \Ea.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.80\textwidth]{gLightNorm.pdf}
+\caption{Behavior of total amount of light ratio ($L$(\Ea)/$L$(0)) as a function of \Ea} 
+\label{fig:light}
+\end{figure}
+
+It is possible to see that, up to values of \Ea\ of about 6.0 kV/cm \La is constant and, therefore, the only light collected is the one produced in GEM amplification processes. Starting from 
+\Ea~=~8.0~kV/cm, the light produced rapidly increases and a light yield three time larger is recorded for \Ea~=~11.3~kV/cm.
+
+\subsection{$^{55}$Fe spectra studies}
+\label{sec:55fe}
+Two examples of distribution of light in $^{55}$Fe reconstructed spots are shown in Fig.~\ref{fig:qIn} with superimposed (in blue) fits to a Polya for the signal peak plus a Gaussian for the noise and the only Polya component in black (for details see \cite{bib:fe55}).
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.407\textwidth]{hqIn_3540.png}
+\includegraphics[width=0.4\textwidth]{hqIn_3629.png}
+\caption{$^{55}$Fe spectra produced in the detector for \Ea~=~0~kV/cm (left) and for \Ea~=~11.3~kV/cm (right), with superimposed in blue fit to a Polya plus a Gaussian, for the noise, function and, in black, the only Polya component.} 
+\label{fig:qIn}
+\end{figure}
+
+The large increase in of the light associated to each $^{55}$Fe spot for high values of \Ea\ is well visible. 
+It should also be noticed that, the increased signal does not spoil the relative energy resolution of the detector (around 40\% in both cases because of the low \Vg\ value was chosen). 
+
+The behavior of the peak position as a function of \Ea\ is shown in Fig.~\ref{fig:qIn2}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.80\textwidth]{gqIn.pdf}
+\caption{Behaviour of the fitted mean value of the Polya function for the
+$^{55}$Fe spectra as a 
+function of \Ea.} 
+\label{fig:qIn2}
+\end{figure}
+
+The trend of spectra mean values confirms the result obtained in the \La\ analysis (see Sect.~\ref{sec:ly}): almost constant for \Ea\ lower than 8~kV/cm and a rapid increase for large \Ea\ values.
+
+\subsection{Charge studies}
+
+During the whole data taking, the currents drawn by the bottom electrode of last GEM (\Ig) and by the mesh (\Ime) were continuously monitored. 
+
+The values of the two currents were first measured in absence of the $^{55}$Fe source for different \Ea\ in the range [0~$\div$11.3]~kV/cm values and found to be negligible and compatible with the current meter sensitivity.
+
+The behavior of the sum \Itot=\Ig +\Ime\ in presence of the $^{55}$Fe, as a function of 
+\Ea, normalised to its initial value is shown in Fig.~\ref{fig:currents}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.80\textwidth]{currents.pdf}
+\caption{Sum of \Ig\ and \Ime\ normalised to \Ea~=~0~kV/cm (see text for details) as a function of \Ea\  (black circles) together with their 
+fraction with respect to the sum.} 
+\label{fig:currents}
+\end{figure}
+
+Except for a small increase for \Ea\ values larger than 8~kV/cm, \Itot\ was quite stable and almost independent from \Ea. This result indicates the substantial stability of the total charge in presence of various voltage differences between the GEM~\#3 and the mesh. An increase of this quantity would have indicated a variation in the multiplication processes within the GEM~\#3 or the arising of avalanches on the mesh wires.
+This stability allows, instead, to conclude that further light detected by the camera is produced by simple electro-luminescence of the gas in the gap between GEM~\#3 and the mesh, induced by electrons exiting from GEM channels, without any detectable further gas ionisation.
+
+Moreover, the behavior of ratios  \Ig/\Itot\ and \Ime/\Itot\ provides information about the charge sharing between the two electrodes.
+For \Ea~=~0 kV/cm all charge exiting from multiplication channels of GEM~\#3 is collected by the bottom electrode of the GEM. In presence of an electric field below the GEM electrons are extracted and drifted toward the mesh. With a field of \Ea~=~11.3~kV/cm almost half of the charge is collected by the mesh.
+
+The behavior of \Ime /\Itot, was fitted to an exponential function:
+$$
+\epsilon_{extr} = I_{\mathrm{mesh}}/I_{\mathrm{tot}} = A\cdot(1-e^{-E_{\mathrm{A}}/b})
+$$
+while \Ig/\Itot\ to its complement to 1.
+From fit, a value of A = 0.57$\pm$0.02 was evaluated indicating that, asymptotically, less than about 60\% of the charge can be collected on the mesh. This results is in good agreement with expectations from Garfield simulation found in literature \cite{bib:thesis, bib:Bonivento, bib:ieee_benci}.
+
+\section{Evaluation of process mean free path}
+
+From these measurements, the probability for an accelerated electron to create a photon can be evaluated. Let \nel\ be the total number of electrons and \ngem\ the total number of photons exiting from the last GEM. They are related by:
+
+\begin{equation}
+n_{\mathrm{GEM}} = n_{\mathrm{el}} \times \alpha_{\mathrm{GEM}} \times \Omega \times T_{\mathrm{mesh}}
+\label{eq:1}
+\end{equation}
+
+where \agem\ is the ratio between the number of photons and the number of electrons produced within the GEM, $\Omega$ is the fraction of the solid angle covered by the lens and \Tm\ is the optical transparency of the mesh.
+The value of \ngem\ is the number of photons collected with \Ea~=~0~kV/cm measured to be 159~$\pm$~10 (see plot in Fig.\ref{fig:qIn}), while the value of \agem\ was published by our group in~\cite{bib:ieee_orange} and found to be about~$0.070\pm0.005$ in good agreement with other measurements~\cite{bib:Margato1}.
+
+A similar relation is valid between \nel\ and the total amount of photons produced for electro-luminescence in the gap below the GEM (\nm):
+
+\begin{equation}
+n_{\mathrm{exc}}(E_{\mathrm{A}}) =  n_{\mathrm{el}} \times \epsilon_{extr}(E_{\mathrm{A}}) \times \alpha_{\mathrm{exc}}(E_{\mathrm{A}}) \times \Delta_Z \times \Omega \times T_{\mathrm{mesh}} 
+\label{eq:2}
+\end{equation}
+
+where \aex\ is the probability of creating an excited neutral fragment CF$^*_3$ per unit path length, and thus a photon, in the gas and \nm\ can be measured as the increase in the number of collected photons with respect to \Ea~=~0 kV/cm. 
+In particular $n_{\mathrm{exc}}$(11.3~kV/cm)~=~408~$\pm$~30.
+
+By combining the equations \ref{eq:1} and \ref{eq:2}, the value of \aex\ can be obtained as:
+
+\begin{equation}
+\alpha_{\mathrm{exc}}(E_{\mathrm{A}}) = \alpha_{\mathrm{GEM}} \times \frac{1}{\epsilon_{extr}(E_{\mathrm{A}})} \times \frac{1}{\Delta z} \times \frac{n_{\mathrm{exc}}(E_{\mathrm{A}})}{n_{\mathrm{GEM}}} = 1.2~\pm~0.2~{\mathrm{cm}} ^{-1}
+\end{equation}
+
+This value is in good agreement with the expectation of a mean free path of 1.0$\div$2.0 centimetres for an electron to produce dissociation of CF$_4$ into neutral fragments as evaluated by \cite{bib:Fraga} and reported in Sect. \ref{sec:he-cf4}.
+
+\section{Conclusion}
+
+The possibility of improving the light signal in an Optical Readout triple-GEM structure by exploiting electro-luminescence in the gas outside the multiplication channels was studied.
+
+A metal mesh was added 3 mm beyond the last GEM, to create an electric field to accelerate electrons and make them induce photon production by the gas molecules.
+With this experimental set-up, an increase in the signal of about a factor 3 was obtained in stable working conditions by applying 3.4~kV  voltage difference between the GEM and the mesh (i.e. an electric field of about 11.3~kV/cm).
+
+Because of the very fast increase in the electro-luminescence cross-section as a function of the electric field strength, 
+reaching slightly higher voltages with better isolated setup would allow important increases of the scintillation yield. 
+
+This technique can therefore easily lead to an interesting improvement in terms of light 
+signal in Optically Readout GEM without demanding for large electron gains.
+
+\section*{Acknowledgment}
+This work was supported by the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation program (grant agreement No 818744)”.
+
+
+\bibliographystyle{JHEP}
+\bibliography{el}{}
+
+%\printbibliography
+
+\end{document}
